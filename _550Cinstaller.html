@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base lang="en-US">
+        <title>550C Installer</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <style equiv="main.sys">
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            :root {
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+            }
+            head {
+                display: none;
+            }
+            dialog {
+                position:absolute;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                border: 1px solid #ccc;
+            }
+            .titlebar {
+                display:flex;
+                flex-direction:row;
+                justify-content: space-between;
+                background-color: lightblue;
+                align-items: center;
+                width: 100%;
+                height: auto;
+            }
+            #main {
+                z-index: 1;
+                position: absolute;
+                width:30%;
+                height: 30%;
+                top: 50%;
+                left: 50%;
+            }
+        </style>
+        <style equiv="windowcore.sys">
+            
+            #install {
+                z-index: 2;
+                position: absolute;
+                width:30%;
+                height: auto;
+                top: 20%;
+                left: 70%;
+                border:1px solid black;
+                margin: 0;
+                padding: none;
+            }
+            #regedit {
+                z-index: 3;
+                position: absolute;
+                width:30%;
+                height: 30%;
+                top: 70%;
+                left: 20%;
+            }
+            #tts{
+                z-index: 4;
+                position: absolute;
+                width:30%;
+                height: auto;
+                top: 60%;
+                left: 70%;
+            }
+        </style>
+        <style equiv="manifest.sys">
+            /*manifest is where the very core styles are stored, and they are applied to the entire document*/
+            main {
+                width: 100%;
+                height: 100vh;
+                background-color: black;/*terminal*/
+                color: #00ff00; /* glowing green color */
+                overflow: hidden;
+            }
+        </style>
+        <Script>
+            // Define sleep function globally
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+        </Script>
+    </head>
+    <body>
+        <main>
+            <div class="text-wrapper">
+                <p>Welcome to the Installer</p>
+                <p>Initializing install environment...</p>
+            </div>
+        </main>
+        <Script>
+            function loadDrivers(){
+                // This function is called during boot to apply dynamic styles
+            }
+            
+            async function runmain(){
+                var q = document.querySelector("[class=text-wrapper]");//gives first element which is the terminal
+                function write(str){
+                    q.innerHTML += `<p>${str}</p>`;
+                    q.scrollTop = q.scrollHeight;
+                }
+                write("Performing HTML5 firmware...")
+                await sleep(300);
+                write("Firmware installation complete.")
+                await sleep(200);
+                write("Installing drivers...")
+                loadDrivers();
+                await sleep(250);
+                write("Drivers installed successfully.")
+                write("Preparing FileSystem...")
+                await sleep(1000); //more time to prepare filesystem
+                write("FileSystem prepared successfully.")
+                await sleep(150);
+                write("GET: https://www.550C-system32.corp.com/ISO/C-DRIVE.iso")
+                await sleep(200);
+                write("Executing iso to create disk...")
+                await sleep(300);
+                write("Disk created successfully.")
+                await sleep(150);
+                write("Creating bootloader...")
+                await sleep(200);
+                write("GET: https://www.550C-system32.corp.com/ISO/BOOTLOADER.iso")
+                await sleep(250);
+                write("Pushing ESP partition security measures...")
+                await sleep(800);
+                write("Preparing Imagery Hardware...")
+                await sleep(100);
+                write("CPU ........ OK")
+                await sleep(150);
+                write("GPU ........ OK")
+                await sleep(150);
+                write("RAM ........ OK")
+                await sleep(150);
+                write("FPGA ........ OK")
+                await sleep(150);
+                write("ACPI ........ OK")
+                await sleep(150);
+                write("Serial Ports ........ OK")
+                await sleep(150);
+                write("HDD ........ OK")
+                await sleep(150);
+                write("Performing CPU reset...")
+                await sleep(200);
+                write("CPU reset complete.")
+                await sleep(1500);
+                write("CPU assemblies optimized successfully.")
+                await sleep(200);
+                write("Preparing and optimizing assembly: asm/core.asm")
+                await sleep(150);
+                write("Preparing and optimizing assembly: asm/boot.asm")
+                await sleep(150);
+                write("Preparing and optimizing assembly: asm/kernel.asm")
+                await sleep(150);
+                write("Preparing and optimizing assembly: asm/runtime.asm")
+                await sleep(150);
+                write("Writing dotnet configuration...")
+                await sleep(200);
+                write("Finalizing and sweeping footprints...")
+                await sleep(200);
+                write("Handing to UEFI bootloader...")
+                await sleep(300);
+                write("------------------------------------------")
+                
+                write("UEFI BOOTLOADER v1.0.0")
+                
+                write("------------------------------------------")
+                await sleep(1500);
+                write("Power on Self Test (POST) in progress...")
+                await sleep(2000);
+                write("Validating boot")
+                if(!/chrome|firefox|safari|edge/i.test(navigator.userAgent)){
+                    write("Boot failed. Unsupported browser detected.")
+                    write("Please use a supported browser (Chrome, Firefox, Safari, Edge) to continue.")
+                    return;
+                }
+                await sleep(500);
+                write("Secure Boot enabled.")
+                await sleep(300);
+                write("Checking 550C bootloader digital signature...")
+                await sleep(200);
+                write("Found cboot.efi with valid digital signature. Executing in safe cache")
+                await sleep(300);
+                write("Creating seperate cache for cboot.efi: cboot_secure.cache ...")
+                await sleep(250);
+                write("dotnet restore: restoring cboot_secure.cache and cboot.efi dependencies.")
+                await sleep(200);
+                write("dotnet restore: cload.cexe")
+                await sleep(100);
+                write("dotnet restore: bcd")
+                await sleep(100);
+                write("dotnet restore: cachecfg.ini")
+                await sleep(100);
+                write("dotnet restore: boot.stl")
+                await sleep(300);
+                write("dotnet restore: cboot_secure.cache and cboot.efi dependencies restored successfully.")
+                await sleep(200);
+                write("The cache was verified and containes all the necessary files to boot the 550C operating system.")
+                await sleep(300);
+                write("Executing cboot.efi...")
+                await sleep(200);
+                write("finalizing UEFI bootloader and handing over to 550C kernel...")
+                await sleep(300);
+                write("-------------------------------------------")
+                write("550C KERNEL v1.0.0")
+                write("-------------------------------------------")
+                await sleep(600);
+                write("Starting 550C kernel: sysoskrnl.exe")
+                await sleep(150);
+                write("Starting 550C kernel: krnlcore.exe")
+                await sleep(150);
+                write("Starting 550C kernel: hal.dll")
+                await sleep(150);
+                write("Starting 550C kernel: SystemCore.exe")
+                await sleep(150);
+                write("Starting 550C kernel: user32.dll")
+                await sleep(150);
+                write("Starting 550C kernel: kernel32.dll")
+                await sleep(150);
+                write("Starting 550C kernel: shell32.dll")
+                await sleep(150);
+                write("Starting 550C kernel: comobjmgr.exe")
+                await sleep(150);
+                write("Starting 550C kernel: cload.exe")
+                await sleep(150);
+                write("Starting 550C kernel: cbasemgr.exe")
+                await sleep(150);
+                write("Starting 550C kernel: regsvr32.exe")
+                await sleep(150);
+                write("Starting 550C kernel: diskpart.exe")
+                await sleep(150);
+                write("Starting 550C kernel: regedit.exe")
+                await sleep(150);
+                write("Starting 550C kernel: krnllayer.dll")
+                await sleep(150);
+                write("Starting 550C kernel: smss.exe")
+                await sleep(200);
+                write("Creating 550C session")
+                await sleep(200);
+                write("Loading core: csrss.exe")
+                await sleep(200);
+                write("Locating firmware image: CWTS.fimg")
+                await sleep(200);
+                write("Executing 550C Windwows Transition System (CWTS) firmware...")
+                await sleep(300);
+                write("Handing over to CWTS firmware...")
+                await sleep(300);
+                write("--------------------------------------------")
+                write("CWTS FIRMWARE v1.0.0")
+                write("--------------------------------------------")
+                await sleep(400);
+                
+                write("Preparing: win32.exe")
+                await sleep(100);
+                write("Preparing: crypto.dll")
+                await sleep(100);
+                write("Preparing windows files: wininit.exe")
+                await sleep(100);
+                write("Preparing windows files:svchost.exe")
+                await sleep(100);
+                write("Preparing windows files: services.exe")
+                await sleep(100);
+                write("Preparing windows files: services.msc")
+                await sleep(100);
+                write("Preparing windows files: msiexec.exe")
+                await sleep(100);
+                write("Preparing windows files: conhost.exe")
+                await sleep(100);
+                write("Preparing windows files: openconsole.exe")
+                await sleep(100);
+                write("Preparing windows files: control.exe")
+                await sleep(100);
+                write("Preparing windows files: taskmgr.exe")
+                await sleep(100);
+                write("Preparing windows files: gpedit.msc")
+                await sleep(100);
+                write("Preparing windows files: eventvwr.msc")
+                await sleep(100);
+                write("Preparing windows files: basesvr.dll")
+                await sleep(100);
+                write("Preparing windows files: csrsrv.exe")
+                await sleep(100);
+                write("Preparing windows files: cmd.exe")
+                await sleep(100);
+                write("Preparing windows files: lsass.exe")
+                await sleep(200);
+                write("Sending message to ntoskrnl: C_WINDOWS_READY_TO_BOOT")
+                await sleep(300);
+                write("Finalizing and verifing: 1%")
+                await sleep(150);
+                write("Finalizing and verifing: 10%")
+                await sleep(150);
+                write("Finalizing and verifing: 20%")
+                await sleep(150);
+                write("Finalizing and verifing: 30%")
+                await sleep(150);
+                write("Finalizing and verifing: 40%")
+                await sleep(150);
+                write("Finalizing and verifing: 50%")
+                await sleep(150);
+                write("Finalizing and verifing: 60%")
+                await sleep(150);
+                write("Finalizing and verifing: 70%")
+                await sleep(150);
+                write("Finalizing and verifing: 80%")
+                await sleep(150);
+                write("Finalizing and verifing: 90%")
+                await sleep(150);
+                write("Finalizing and verifing: 100%")
+                await sleep(400);
+                write("Sweeping footprint and handing over to Windows 11 Kernel...")
+                await sleep(300);
+                write("--------------------------------------------")
+                write("WINDOWS 11 KERNEL v1.0.0")
+                write("--------------------------------------------")
+                await sleep(500);
+                write("Starting Windows 11 kernel: winload.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: winresume.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: winlogon.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: wininit.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: services.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: lsass.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: smss.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: csrss.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: svchost.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: taskhostw.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: explorer.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: dwm.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: conhost.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: openconsole.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: control.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: taskmgr.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: gpedit.msc")
+                await sleep(150);
+                write("Starting Windows 11 kernel: eventvwr.msc")
+                await sleep(150);
+                write("Starting Windows 11 kernel: basesvr.dll")
+                await sleep(150);
+                write("Starting Windows 11 kernel: csrsrv.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: cmd.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: lsass.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: win32k.sys")
+                await sleep(150);
+                write("Starting Windows 11 kernel: ntoskrnl.exe")
+                await sleep(150);
+                write("Starting Windows 11 kernel: hal.dll")
+                await sleep(150);
+                write("Starting Windows 11 kernel: win32kfull.sys")
+                await sleep(150);
+                write("Starting Windows 11 kernel: win32kbase.sys")
+                await sleep(200);
+                write("prepring driver: acpi.sys")
+                await sleep(100);
+                write("prepring driver: disk.sys")
+                await sleep(100);
+                write("prepring driver: fltmgr.sys")
+                await sleep(100);
+                write("prepring driver: volmgr.sys")
+                await sleep(100);
+                write("prepring driver: volmgrx.sys")
+                await sleep(100);
+                write("prepring driver: partmgr.sys")
+                await sleep(100);
+                write("prepring driver: mountmgr.sys")
+                await sleep(100);
+                write("prepring driver: storport.sys")
+                await sleep(100);
+                write("prepring driver: storahci.sys")
+                await sleep(100);
+                write("prepring driver: storvsc.sys")
+                await sleep(100);
+                write("prepring driver: storflt.sys")
+                await sleep(100);
+                write("prepring driver: storqosflt.sys")
+                await sleep(100);
+                write("prepring driver: storufs.sys")
+                await sleep(150);
+                write("Preparing: INTEL")
+                await sleep(150);
+                write("Preparing: NVIDIA")
+                await sleep(300);
+                write("Running cinstall to install 550C Core...")
+                await sleep(500);
+                showMainDialog()
+                write("Finalizing...")
+                await sleep(400);
+                write("Windows is good to run msi installer!We wish you a good day!")
+                await sleep(300);
+                return; // stop the function here
+            }
+            function showMainDialog(){
+                document.getElementById("main").style.display = "block";
+            }
+            // Auto-start the boot sequence when page loads
+            runmain();
+        </Script>
+        <style>
+            row{
+                display: flex;
+                flex-direction: row;
+            }
+            col{
+                display: flex;
+                flex-direction: column;
+            }
+            .text-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                overflow-y: auto;
+                overflow-x: hidden;
+                box-sizing: border-box;
+                text-align: left;
+                font-family: 'Comfortaa', cursive;
+                color: #00ff00;
+            }
+            .content {
+                padding: 20px;
+                text-align: center;
+            }
+            button {
+                background-color: aqua;
+                color: black;
+                text-align: center;
+                display:inline-block;
+                cursor: pointer;
+            }
+            /* Windows 11 Progress Bar Styling */
+            progress {
+                width: 100%;
+                height: 8px;
+                border: none;
+                border-radius: 4px;
+                background-color: #e0e0e0;
+                overflow: hidden;
+            }
+            progress::-webkit-progress-bar {
+                background-color: #e0e0e0;
+                border-radius: 4px;
+                overflow: hidden;
+            }
+            progress::-webkit-progress-value {
+                background: linear-gradient(90deg, #0078d4 0%, #0078d4 100%);
+                border-radius: 4px;
+                transition: width 0.3s ease;
+            }
+            progress::-moz-progress-bar {
+                background: linear-gradient(90deg, #0078d4 0%, #0078d4 100%);
+                border-radius: 4px;
+                transition: width 0.3s ease;
+            }
+            .progress-container {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .progress-label {
+                font-family: Segoe UI, Arial, sans-serif;
+                font-size: 14px;
+                color: #00ff00;
+                margin-bottom: 8px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .progress-percentage {
+                font-weight: bold;
+                color: #00ff00;
+            }
+        </style>
+        <dialog id="main" style="display:none;">
+            <div class="titlebar">
+                550C Installer
+                <button>X</button>
+            </div>
+            <div class="content">
+                <p>Welcome to the 550C Installer! Please follow the instructions to complete the installation.</p>
+                <button onclick="startInstallation()" id="startButton">Start Installation</button>
+            </div>
+        </dialog>
+        <Script>
+            let contentElement = null;
+            
+            function startInstallation(){
+                contentElement = document.querySelector("[class=content]");
+                function writeB(str){
+                    contentElement.innerHTML += `<p>${str}</p>`;
+                }
+                document.getElementById("startButton").style.display = "none";
+                writeB("Please choose an installation target path")
+                contentElement.innerHTML += "<input type='text' id='installPath' placeholder='C:\\Program Files\\550C\\'><br><button onclick='performInstall()'>Install</button>";
+                document.getElementById("installPath").focus();
+            }
+            
+            async function performInstall(){
+                var path = document.getElementById("installPath").value;
+                if(path == ""){
+                    contentElement.innerHTML += `<p>Please enter a valid installation path.</p>`;
+                    return;
+                }
+                contentElement.innerHTML = "";
+                contentElement.innerHTML += `<div class="progress-container"><div class="progress-label"><span id="install-status">Installing...</span><span class="progress-percentage"><span id="percent">0</span>%</span></div><progress id="progress" value="0" max="100"></progress></div><p id="label"></p>`;
+                
+                function writeLabel(str){
+                    document.getElementById("label").innerHTML = str;
+                }
+                
+                function updateProgress(percent, status) {
+                    document.getElementById("progress").value = percent;
+                    document.getElementById("percent").innerHTML = percent;
+                    if(status) {
+                        document.getElementById("install-status").innerHTML = status;
+                    }
+                }
+                
+                updateProgress(0, "Downloading 550C Core files");
+                await sleep(3000);
+                
+                updateProgress(5, "Creating Object Instance: */core.obj");
+                await sleep(100);
+                updateProgress(10, "Creating Object Instance: */systemruntime.obj");
+                await sleep(100);
+                updateProgress(15, "Creating Object Instance: */system.application.x64.obj");
+                await sleep(100);
+                updateProgress(20, "Creating Object Instance: */system.winshell.targeted.obj");
+                await sleep(100);
+                updateProgress(25, "Creating Object Instance: */system.main32.obj");
+                await sleep(100);
+                updateProgress(30, "Creating Object Instance: */system.reflector.obj");
+                await sleep(100);
+                updateProgress(35, "Creating Object Instance: */system.dotnet.obj");
+                await sleep(100);
+                updateProgress(40, "Creating Object Instance: */system.webview.obj");
+                await sleep(100);
+                
+                updateProgress(45, "Compiling objects and installing");
+                await sleep(6000);
+                
+                updateProgress(60, "Updating component registration");
+                await sleep(100);
+                openReg();
+                await sleep(1000);
+                closeReg();
+                
+                updateProgress(75, "Generating XML files");
+                await sleep(3000);
+                
+                updateProgress(90, "Finalizing installation");
+                await sleep(2000);
+                
+                updateProgress(100, "Installation complete!");
+                await sleep(500);
+                writeLabel("Installation completed successfully!");
+                alert("Installation is complete");
+                return;
+            }
+            
+            function openReg(){
+                var regedit = document.getElementById("regedit");
+                regedit.style.display = "block";
+            }
+            
+            function closeReg() {
+                var regedit = document.getElementById("regedit");
+                regedit.style.display = "none";
+            }
+        </Script>
+
+        <dialog id="regedit" style="display:none">
+            <div class="titlebar">
+                Regedit.exe
+                <button>X</button>
+            </div>
+            <div class="text-wrap">
+                Creating registry and importing .reg files...
+            </div>
+        </dialog>
+    </body>
+</html>

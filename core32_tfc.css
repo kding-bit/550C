@@ -1,0 +1,2981 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+:root{--bg:#0b1014;--panel:#111a20;--line:#2b3b42;--text:#e7eee8;--muted:#819399;--accent:#e7a452;--cyan:#6dc8c4;--danger:#ed806e}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 18% 15%,#1b2a2c 0,transparent 33%),linear-gradient(135deg,#080d11,#111b20);color:var(--text);font-family:'Barlow Condensed',sans-serif;letter-spacing:.06em}.shell{max-width:1180px;margin:auto;padding:25px 34px;min-height:100vh;display:flex;flex-direction:column}.topbar{height:55px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;justify-content:space-between;font:700 14px 'Space Mono',monospace}.brand{display:flex;align-items:center;gap:14px}.brand-mark{color:var(--accent);font-size:21px}.status{color:var(--muted);font-size:11px}.status i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 9px var(--cyan);margin-right:8px}.login-layout{flex:1;display:grid;grid-template-columns:1fr 390px;gap:8%;align-items:center;padding:50px 4% 75px}.eyebrow{color:var(--accent);font:11px 'Space Mono',monospace;letter-spacing:.12em;margin:0 0 18px}.hero-panel h1{font-size:clamp(48px,7vw,88px);line-height:.88;letter-spacing:.02em;margin:0 0 30px;font-weight:600}.hero-panel h1 span{color:var(--cyan)}.intro{max-width:400px;color:var(--muted);font-size:18px;line-height:1.35;letter-spacing:.03em}.readout-grid{display:flex;gap:32px;margin-top:75px;border-top:1px solid var(--line);padding-top:18px}.readout-grid small,.data-list span,.field span{display:block;color:var(--muted);font:10px 'Space Mono',monospace;letter-spacing:.09em;margin-bottom:7px}.readout-grid strong{font:13px 'Space Mono',monospace}.card{background:rgba(17,26,32,.88);border:1px solid var(--line);box-shadow:12px 12px 0 rgba(0,0,0,.16);padding:28px}.login-card{position:relative}.card-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;font:10px 'Space Mono',monospace;color:var(--muted)}.chip{color:var(--accent);border:1px solid #695331;padding:5px 7px}.lock{color:var(--cyan)}h2{font-size:31px;letter-spacing:.03em;margin:0 0 8px}.muted{color:var(--muted);letter-spacing:.025em;line-height:1.45}.login-card .muted{font-size:15px;margin-bottom:27px}label{display:block;color:#b6c6c5;font:10px 'Space Mono',monospace;margin:19px 0 8px}input{width:100%;height:43px;border:1px solid #3a4c52;background:#0b1216;color:var(--text);padding:0 12px;font:14px 'Space Mono',monospace;outline:none}input:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(109,200,196,.1)}button{border:0;background:var(--accent);color:#17150f;width:100%;height:48px;margin-top:27px;font:700 12px 'Space Mono',monospace;cursor:pointer;letter-spacing:.06em}button:hover{filter:brightness(1.1)}button span{font-size:20px;vertical-align:-2px;margin-left:13px}.message{min-height:16px;color:var(--danger);font:11px 'Space Mono',monospace;margin:13px 0 0}.security-note{font:10px 'Space Mono',monospace;color:#53666c;line-height:1.5;margin:20px 0 0}.hidden{display:none!important}.dashboard{padding:55px 4%;flex:1}.dashboard-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:26px}.dashboard-head h2{font-size:44px}.secondary{width:auto;background:transparent;border:1px solid var(--line);color:var(--muted);padding:0 18px;margin:0}.dashboard-grid{display:grid;grid-template-columns:330px 1fr;gap:16px}.online{color:var(--cyan)}.avatar{width:68px;height:68px;border:1px solid var(--accent);display:grid;place-items:center;color:var(--accent);font:700 23px 'Space Mono',monospace;margin:10px 0 17px}.profile-card h3{font-size:27px;margin:0}.data-list{margin-top:35px;border-top:1px solid var(--line)}.data-list div{padding:15px 0;border-bottom:1px solid var(--line)}.data-list b{font:14px 'Space Mono',monospace}.field{padding:20px 0;border-bottom:1px solid var(--line)}.field strong{font:18px 'Space Mono',monospace}.accent{color:var(--accent)}.console-line{color:var(--cyan);font:12px 'Space Mono',monospace;line-height:2;margin-top:28px}footer{border-top:1px solid var(--line);padding-top:18px;color:#53666c;font:10px 'Space Mono',monospace}footer span{color:var(--accent);margin:0 10px}.window-shell{background:#d7d7d7;color:#101820;border:1px solid #000;box-shadow:14px 14px 0 rgba(0,0,0,.25);font-family:'Space Mono',monospace}.window-titlebar{height:38px;background:linear-gradient(#315d70,#173b4b);color:#fff;display:flex;align-items:center;justify-content:space-between;padding-left:12px;font-size:13px}.window-icon{color:#e7a452;margin-right:8px}.window-close{width:32px;height:28px;margin:0 5px 0 0;padding:0;background:#bd554c;color:#fff;border:1px solid #10242c;font:700 20px Arial;line-height:20px}.window-close:hover{filter:brightness(1.15)}.window-menubar{height:34px;background:#ececec;border-bottom:1px solid #969696;display:flex;align-items:center;gap:22px;padding:0 14px;color:#24363d;font-size:11px}.window-menubar em{margin-left:auto;color:#53666c;font-style:normal;font-size:10px}.window-toolbar{height:42px;background:#dedede;border-bottom:1px solid #aaa;display:flex;align-items:center;gap:10px;padding:0 12px;color:#24363d;font-size:10px}.toolbar-button{border:1px solid transparent;padding:6px 9px}.toolbar-button:hover{border-color:#8a9ca2;background:#f5f5f5}.toolbar-separator{height:22px;border-left:1px solid #aaa}.toolbar-status{color:#3c6c69;margin-left:auto}.window-content{padding:25px;background:#f2f2f2;min-height:310px}.editor-heading{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}.editor-heading h2{color:#182b32;margin:0;font-size:28px}.editor-heading .eyebrow{color:#8a5d25;margin-bottom:8px}.table-wrap{overflow-x:auto;border:1px solid #8e9da0;background:#fff}.profile-table{border-collapse:collapse;width:100%;min-width:930px;text-align:left;font-size:11px;color:#172b32}.profile-table th{background:#315d70;color:#fff;font-weight:700;padding:11px 12px;border-right:1px solid #77919a;white-space:nowrap}.profile-table td{padding:15px 12px;border-right:1px solid #c1cacc;border-bottom:1px solid #c1cacc;vertical-align:top;white-space:nowrap}.profile-table tbody tr:hover{background:#edf7f7}.profile-table td:nth-child(2),.profile-table td:nth-child(4){white-space:normal;min-width:100px}.editor-status{display:flex;gap:25px;flex-wrap:wrap;margin-top:16px;color:#53666c;font-size:10px}.editor-status span:first-child{color:#3c7773}@media(max-width:760px){.shell{padding:20px}.login-layout{grid-template-columns:1fr;padding:45px 0}.readout-grid{margin-top:35px}.dashboard{padding:40px 0}.dashboard-grid{grid-template-columns:1fr}.dashboard-head{align-items:start;gap:20px;flex-direction:column}.secondary{height:40px}.hero-panel h1{font-size:58px}}
+
+/* Login page logos */
+.login-logos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 24px;
+}
+
+.login-logo {
+  display: block;
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  margin: 0;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, .04);
+  padding: 8px;
+}
+
+@media (max-width: 760px) {
+  .login-logos {
+    gap: 8px;
+  }
+
+  .login-logo {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Account action buttons */
+
+.account-button {
+  padding: 7px 10px;
+  border: 1px solid;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.15s ease;
+}
+
+.disable-button {
+  border-color: #d84b4b;
+  background: #2a1010;
+  color: #ff6b6b;
+}
+
+.disable-button:hover {
+  background: #d84b4b;
+  color: #fff;
+}
+
+.enable-button {
+  border-color: #48a868;
+  background: #102a18;
+  color: #61d985;
+}
+
+.enable-button:hover {
+  background: #48a868;
+  color: #fff;
+}
+
+/* Disabled profile name */
+
+.disabled-name {
+  font-weight: 800;
+}
+
+/* Disabled TFC number */
+
+.disabled-tfc {
+  color: #ff6b6b;
+  font-weight: 700;
+}
+
+/* Status labels */
+
+.admin-label {
+  color: #8b8b8b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.disabled-label {
+  color: #ff6b6b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+/* ----------------------------------------------------------
+   WINDOWS STYLE REFRESH DIALOG
+   ---------------------------------------------------------- */
+
+.refresh-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.48);
+}
+
+.refresh-overlay.hidden {
+  display: none;
+}
+
+.refresh-window {
+  width: 430px;
+
+  background: #d4d0c8;
+  color: #111;
+
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+
+  box-shadow:
+    4px 4px 0 rgba(0, 0, 0, 0.45);
+
+  font-family:
+    "MS Sans Serif",
+    Tahoma,
+    Arial,
+    sans-serif;
+
+  font-size: 12px;
+}
+
+.refresh-titlebar {
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5px;
+
+  color: white;
+  background: #000080;
+
+  font-weight: bold;
+}
+
+.refresh-window-icon {
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #000;
+  background: #d4d0c8;
+
+  border: 1px solid;
+  border-color: #fff #404040 #404040 #fff;
+
+  font-size: 13px;
+  line-height: 1;
+}
+
+.refresh-content {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 24px 20px 18px;
+}
+
+.refresh-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #000080;
+  font-size: 30px;
+}
+
+.refresh-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.refresh-text strong {
+  font-size: 13px;
+}
+
+.refresh-text span {
+  color: #333;
+}
+
+.progress-track {
+  height: 18px;
+
+  margin: 0 20px 16px;
+
+  background: #fff;
+
+  border: 2px solid;
+  border-color: #404040 #fff #fff #404040;
+
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #000080 0px,
+      #000080 12px,
+      #d4d0c8 12px,
+      #d4d0c8 14px
+    );
+
+  transition: width 0.08s linear;
+}
+
+.refresh-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px 18px;
+}
+
+.refresh-footer button {
+  min-width: 70px;
+
+  padding: 4px 12px;
+
+  background: #d4d0c8;
+
+  border: 2px solid;
+  border-color: #fff #404040 #404040 #fff;
+
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.refresh-footer button:disabled {
+  color: #777;
+}
+/* ----------------------------------------------------------
+   KAMAR WINDOW
+   ---------------------------------------------------------- */
+
+.kamar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.kamar-overlay.hidden {
+  display: none;
+}
+
+.kamar-window {
+  width: min(1100px, 92vw);
+  height: min(720px, 88vh);
+
+  display: flex;
+  flex-direction: column;
+
+  background: #d4d0c8;
+  color: #111;
+
+  border: 2px solid;
+  border-color: #fff #404040 #404040 #fff;
+
+  box-shadow:
+    6px 6px 0 rgba(0, 0, 0, 0.45);
+
+  font-family:
+    "MS Sans Serif",
+    Tahoma,
+    Arial,
+    sans-serif;
+}
+
+.kamar-titlebar {
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4px 0 6px;
+
+  color: #fff;
+  background: #000080;
+
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.kamar-window-icon {
+  margin-right: 5px;
+}
+
+.kamar-close {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  color: #111;
+  background: #d4d0c8;
+
+  border: 1px solid;
+  border-color: #fff #404040 #404040 #fff;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.kamar-close:active {
+  border-color: #404040 #fff #fff #404040;
+}
+
+.kamar-menubar {
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 0 9px;
+
+  background: #d4d0c8;
+
+  border-bottom: 1px solid #808080;
+
+  font-size: 12px;
+}
+
+.kamar-statusbar {
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 7px;
+
+  background: #d4d0c8;
+
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #808080;
+
+  color: #333;
+
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.kamar-frame-container {
+  flex: 1;
+
+  min-height: 0;
+
+  padding: 4px;
+
+  background: #808080;
+
+  border: 2px solid;
+  border-color: #404040 #fff #fff #404040;
+}
+
+#kamarFrame {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  background: #000;
+}
+
+.kamar-footer {
+  height: 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 7px;
+
+  color: #444;
+
+  font-size: 9px;
+
+  border-top: 1px solid #fff;
+}
+/* ==========================================================
+   KAMAR MENUS
+   ========================================================== */
+
+.kamar-menubar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+}
+
+.kamar-menu {
+  position: relative;
+}
+
+.kamar-menu > button,
+.kamar-filter-button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 4px 9px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.kamar-menu > button:hover,
+.kamar-filter-button:hover {
+  background: #000080;
+  color: white;
+}
+
+.kamar-dropdown {
+  display: none;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  min-width: 175px;
+
+  z-index: 10001;
+
+  padding: 2px;
+
+  background: #d4d0c8;
+
+  border: 2px solid;
+  border-color: #fff #404040 #404040 #fff;
+
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, .3);
+}
+
+.kamar-menu:hover .kamar-dropdown {
+  display: block;
+}
+
+.kamar-dropdown button {
+  display: block;
+
+  width: 100%;
+
+  padding: 6px 12px;
+
+  border: 0;
+
+  background: transparent;
+
+  text-align: left;
+
+  font-family: inherit;
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.kamar-dropdown button:hover {
+  color: white;
+  background: #000080;
+}
+
+.kamar-filter-button {
+  margin-left: 8px;
+}
+
+
+/* ==========================================================
+   WINDOW CONTROLS
+   ========================================================== */
+
+.kamar-window-controls,
+.utility-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.kamar-window-controls button,
+.utility-controls button {
+  width: 18px;
+  height: 17px;
+
+  padding: 0;
+
+  background: #d4d0c8;
+
+  border: 1px solid;
+  border-color: #fff #404040 #404040 #fff;
+
+  font-family: inherit;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.kamar-window-controls button:active,
+.utility-controls button:active {
+  border-color: #404040 #fff #fff #404040;
+}
+
+
+/* ==========================================================
+   MAXIMIZED KAMAR
+   ========================================================== */
+
+.kamar-window.kamar-maximized {
+  position: fixed;
+
+  inset: 8px;
+
+  width: auto;
+  height: auto;
+
+  max-width: none;
+  max-height: none;
+}
+
+.kamar-window.kamar-minimized {
+  height: 24px;
+}
+
+.kamar-window.kamar-minimized
+.kamar-menubar,
+.kamar-window.kamar-minimized
+.kamar-statusbar,
+.kamar-window.kamar-minimized
+.kamar-frame-container,
+.kamar-window.kamar-minimized
+.kamar-footer {
+  display: none;
+}
+
+
+/* ==========================================================
+   UTILITY WINDOWS
+   ========================================================== */
+
+.utility-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, .48);
+}
+
+.utility-overlay.hidden {
+  display: none;
+}
+
+.utility-window {
+  background: #d4d0c8;
+  color: #111;
+
+  border: 2px solid;
+  border-color: #fff #404040 #404040 #fff;
+
+  box-shadow: 4px 4px 0 rgba(0,0,0,.4);
+
+  font-family:
+    "MS Sans Serif",
+    Tahoma,
+    Arial,
+    sans-serif;
+}
+
+.utility-titlebar {
+  height: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4px 0 7px;
+
+  background: #000080;
+  color: white;
+
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.utility-content {
+  padding: 20px;
+}
+
+.utility-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+
+  padding: 8px 12px 12px;
+
+  border-top: 1px solid #808080;
+}
+
+.utility-footer button {
+  min-width: 70px;
+
+  padding: 4px 12px;
+
+  background: #d4d0c8;
+
+  border: 2px solid;
+  border-color: #fff #404040 #404040 #fff;
+
+  font-family: inherit;
+  font-size: 12px;
+}
+
+
+/* ==========================================================
+   FILTER32
+   ========================================================== */
+
+/* ==========================================================
+   FILTER32 — SMALL NATIVE WINDOWS DIALOG
+   ========================================================== */
+
+.filter-window {
+  width: 280px;
+  max-width: 90vw;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+.filter-window .utility-content {
+  padding: 10px;
+}
+
+/* Heading */
+.filter-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.filter-heading strong {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.filter-heading span {
+  font-size: 9px;
+  color: #444;
+}
+
+/* Sections */
+.filter-section {
+  margin-bottom: 8px;
+}
+
+.filter-section > label {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* Options box */
+.filter-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 5px;
+
+  padding: 5px;
+
+  background: #eee;
+
+  border: 2px solid;
+  border-color: #404040 #fff #fff #404040;
+
+  box-sizing: border-box;
+}
+
+.filter-options label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  font-size: 9px;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.filter-options input[type="checkbox"],
+.filter-options input[type="radio"] {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Summary */
+.filter-summary {
+  padding: 5px;
+
+  min-height: 25px;
+  box-sizing: border-box;
+
+  background: #fff;
+  border: 1px solid #808080;
+
+  font-size: 9px;
+  line-height: 12px;
+}
+
+/* Footer buttons */
+.filter-window .utility-footer {
+  gap: 4px;
+  padding: 5px 7px 6px;
+}
+
+.filter-window .utility-footer button {
+  min-width: 55px;
+  height: 21px;
+
+  padding: 2px 8px;
+
+  font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+  font-size: 10px;
+}
+/* ==========================================================
+   FILTER32 — SMALL CLOSE BUTTON
+   ========================================================== */
+
+.filter-window .utility-titlebar > button#closeFilterButton {
+  width: 14px;
+  min-width: 14px;
+  height: 14px;
+  min-height: 14px;
+
+  margin: 0;
+  padding: 0;
+
+  background: #d4d0c8;
+  color: #111;
+
+  border: 1px solid;
+  border-color: #fff #404040 #404040 #fff;
+
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 11px;
+
+  cursor: pointer;
+}
+
+.filter-window .utility-titlebar > button#closeFilterButton:active {
+  border-color: #404040 #fff #fff #404040;
+}
+
+/* ==========================================================
+   HPDLG HELP
+   ========================================================== */
+
+.help-window {
+  width: 570px;
+  max-width: 90vw;
+}
+
+.help-content {
+  display: flex;
+  gap: 18px;
+
+  padding: 22px;
+}
+
+.help-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000080;
+  color: white;
+
+  border: 2px solid;
+  border-color: #404040 #fff #fff #404040;
+
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.help-text {
+  max-height: 430px;
+  overflow-y: auto;
+}
+
+.help-text h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.help-text h4 {
+  margin: 16px 0 5px;
+  font-size: 12px;
+}
+
+.help-text p {
+  margin: 5px 0;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.help-warning {
+  margin-top: 20px !important;
+
+  color: #000080;
+
+  font-weight: bold;
+  font-size: 10px !important;
+}
+.filter-window {
+  color: #111;
+  background: #d4d0c8;
+}
+
+.filter-window button,
+.filter-window label,
+.filter-window span,
+.filter-window strong {
+  color: #111;
+}
+/* ==========================================================
+   EDITKAMAR / KAMAR COMPACT BUTTON FIXES
+   ========================================================== */
+
+/* Toolbar buttons */
+.window-toolbar .toolbar-button {
+  width: auto;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 6px 9px;
+  background: transparent;
+  color: #24363d;
+  border: 1px solid transparent;
+}
+
+.window-toolbar .toolbar-button:hover {
+  border-color: #8a9ca2;
+  background: #f5f5f5;
+}
+
+/* Profile action buttons */
+.profile-table .account-button {
+  width: auto;
+  min-width: 0;
+  height: 28px;
+  min-height: 0;
+  margin: 0;
+  padding: 4px 9px;
+  font-size: 10px;
+}
+
+/* KAMAR menu buttons */
+.kamar-menu > button {
+  width: auto;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 4px 9px;
+}
+
+/* KAMAR dropdown buttons */
+.kamar-dropdown button {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 6px 12px;
+}
+
+/* KAMAR minimize / maximize / close */
+.kamar-window-controls button,
+.utility-controls button {
+  width: 18px;
+  min-width: 18px;
+  height: 17px;
+  min-height: 17px;
+  margin: 0;
+  padding: 0;
+}
+.iframe-diagnostics-window {
+    position: fixed;
+    top: 180px;
+    left: 300px;
+    width: 470px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #404040 #404040 #ffffff;
+    box-shadow: 4px 4px 0 #000;
+    z-index: 9999;
+    font-family: "MS Sans Serif", Arial, sans-serif;
+}
+
+.iframe-diagnostics-titlebar {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+    background: #000080;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.iframe-diagnostics-titlebar button {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: 1px solid;
+    border-color: #fff #404040 #404040 #fff;
+    background: #c0c0c0;
+    color: #000;
+    font-weight: bold;
+    line-height: 14px;
+    cursor: pointer;
+}
+
+.iframe-diagnostics-body {
+    padding: 12px;
+}
+
+.diagnostics-heading {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #808080;
+    font-family: Consolas, monospace;
+    font-weight: bold;
+}
+
+.diagnostic-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 4px 0;
+    border-bottom: 1px solid #d0d0d0;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+}
+
+.diagnostic-row span {
+    font-weight: bold;
+}
+
+.diagnostic-row strong {
+    text-align: right;
+    max-width: 280px;
+    overflow-wrap: anywhere;
+}
+
+.diagnostics-status {
+    margin-top: 12px;
+    padding: 6px;
+    background: #000;
+    color: #00ff66;
+    font-family: Consolas, monospace;
+}
+/* =========================================================
+   550C ADMIN LOGIN BOOT SEQUENCE
+   ========================================================= */
+
+.oauth32-window,
+.preparation-server-window,
+.launchconfig-window {
+    position: fixed;
+    z-index: 999999;
+    font-family: Consolas, "Courier New", monospace;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   oauth32.exe
+   ========================================================= */
+
+.oauth32-window {
+    width: 720px;
+    height: 430px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #050505;
+    border: 1px solid #555;
+    box-shadow:
+        0 0 0 1px #111,
+        0 15px 50px rgba(0, 0, 0, .8);
+}
+
+.oauth32-titlebar {
+    height: 32px;
+    background: linear-gradient(#303030, #181818);
+    border-bottom: 1px solid #555;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    font-size: 13px;
+}
+
+.oauth32-status {
+    font-size: 10px;
+    color: #00ff66;
+}
+
+.oauth32-body {
+    height: calc(100% - 33px);
+    display: flex;
+    flex-direction: column;
+    background: #020202;
+}
+
+.oauth32-header {
+    height: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    border-bottom: 1px solid #1d1d1d;
+    color: #00ff66;
+    font-size: 12px;
+}
+
+.oauth32-code {
+    flex: 1;
+    overflow: hidden;
+    padding: 10px 14px;
+    color: #00ff66;
+    font-size: 11px;
+    line-height: 15px;
+    white-space: pre;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(0,255,100,.025),
+            rgba(0,255,100,.025) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+}
+
+.oauth32-footer {
+    height: 32px;
+    border-top: 1px solid #1d1d1d;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    color: #aaa;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   550C Preparation Server
+   ========================================================= */
+
+.preparation-server-window {
+    width: 520px;
+    background: #202020;
+    border: 1px solid #666;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .8);
+}
+
+.preparation-titlebar {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background: linear-gradient(#383838, #222);
+    border-bottom: 1px solid #555;
+    color: white;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+}
+
+.preparation-body {
+    padding: 26px;
+    background: #282828;
+}
+
+.preparation-text {
+    color: white;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.preparation-progress {
+    width: 100%;
+    height: 20px;
+    background: #111;
+    border: 1px solid #555;
+    overflow: hidden;
+}
+
+.preparation-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #0078d4,
+        #20a8ff
+    );
+    transition: width .05s linear;
+}
+
+.preparation-percent {
+    text-align: right;
+    margin-top: 7px;
+    color: #ddd;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 11px;
+}
+
+.preparation-status {
+    margin-top: 18px;
+    color: #aaa;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   launchconfig.exe
+   ========================================================= */
+
+.launchconfig-window {
+    width: 430px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #111;
+    border: 1px solid #555;
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, .9);
+}
+
+.launchconfig-titlebar {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background: linear-gradient(#333, #1d1d1d);
+    border-bottom: 1px solid #555;
+    color: white;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+}
+
+.launchconfig-body {
+    height: calc(100% - 33px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #080808;
+}
+
+.launchconfig-logo {
+    margin-bottom: 20px;
+}
+
+.\35 50c-logo {
+    width: 82px;
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #00ff66;
+    color: #00ff66;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 21px;
+    letter-spacing: 2px;
+    box-shadow:
+        0 0 15px rgba(0,255,102,.35),
+        inset 0 0 15px rgba(0,255,102,.08);
+}
+
+.launchconfig-text {
+    color: white;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+}
+
+.launchconfig-status {
+    margin-top: 15px;
+    color: #888;
+    font-family: Consolas, monospace;
+    font-size: 10px;
+}
+
+
+/* Spinner */
+
+.launchconfig-spinner {
+    width: 26px;
+    height: 26px;
+    margin-top: 18px;
+    border: 3px solid #333;
+    border-top-color: #00ff66;
+    border-radius: 50%;
+    animation: launchconfigSpin .7s linear infinite;
+}
+
+@keyframes launchconfigSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* =========================================================
+   EDITKAMAR.EXE — SCROLLABLE WINDOW
+   ========================================================= */
+
+.kamar-window {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Main editkamar content area */
+.kamar-window .kamar-content {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Windows-style scrollbar */
+.kamar-window .kamar-content::-webkit-scrollbar {
+    width: 12px;
+}
+
+.kamar-window .kamar-content::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.kamar-window .kamar-content::-webkit-scrollbar-thumb {
+    background: #555;
+    border: 2px solid #1a1a1a;
+}
+
+.kamar-window .kamar-content::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+ /* ==========================================================
+    editKAMAR.EXE — FIXED SIZE + SCROLLING
+    ========================================================== */
+
+#dashboardView {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#dashboardView .window-shell {
+    width: min(950px, calc(100vw - 40px));
+    max-width: calc(100vw - 40px);
+
+    height: min(680px, calc(100vh - 120px));
+    max-height: calc(100vh - 120px);
+
+    min-width: 0;
+    min-height: 350px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   TITLE BAR
+   ========================================================== */
+
+#dashboardView .window-titlebar {
+    flex: 0 0 38px;
+}
+
+
+/* ==========================================================
+   MENU BAR
+   ========================================================== */
+
+#dashboardView .window-menubar {
+    flex: 0 0 34px;
+}
+
+
+/* ==========================================================
+   TOOLBAR
+   ========================================================== */
+
+#dashboardView .window-toolbar {
+    flex: 0 0 42px;
+
+    min-width: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+
+/* ==========================================================
+   MAIN EDITOR AREA
+   ========================================================== */
+
+#dashboardView .window-content {
+    flex: 1 1 auto;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    padding: 25px;
+
+    background: #f2f2f2;
+
+    /*
+     * THIS is the main vertical scrollbar.
+     */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* ==========================================================
+   PROFILE TABLE CONTAINER
+   ========================================================== */
+
+#dashboardView .table-wrap {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    overflow-x: auto;
+    overflow-y: visible;
+
+    border: 1px solid #8e9da0;
+    background: #fff;
+}
+
+
+/* ==========================================================
+   PROFILE TABLE
+   ========================================================== */
+
+#dashboardView .profile-table {
+    width: 100%;
+    min-width: 850px;
+
+    border-collapse: collapse;
+
+    table-layout: auto;
+}
+
+
+/* ==========================================================
+   SCROLLBAR — EDITKAMAR
+   ========================================================== */
+
+#dashboardView .window-content::-webkit-scrollbar {
+    width: 14px;
+}
+
+#dashboardView .window-content::-webkit-scrollbar-track {
+    background: #d4d0c8;
+
+    border-left: 1px solid #808080;
+}
+
+#dashboardView .window-content::-webkit-scrollbar-thumb {
+    background: #808080;
+
+    border: 2px solid #d4d0c8;
+}
+
+#dashboardView .window-content::-webkit-scrollbar-thumb:hover {
+    background: #606060;
+}
+
+
+/* ==========================================================
+   HORIZONTAL TABLE SCROLLBAR
+   ========================================================== */
+
+#dashboardView .table-wrap::-webkit-scrollbar {
+    height: 13px;
+}
+
+#dashboardView .table-wrap::-webkit-scrollbar-track {
+    background: #d4d0c8;
+}
+
+#dashboardView .table-wrap::-webkit-scrollbar-thumb {
+    background: #808080;
+
+    border: 2px solid #d4d0c8;
+}
+
+
+/* ==========================================================
+   SMALLER SCREENS
+   ========================================================== */
+
+@media (max-width: 760px) {
+
+    #dashboardView .window-shell {
+        width: calc(100vw - 20px);
+        max-width: calc(100vw - 20px);
+
+        height: calc(100vh - 30px);
+        max-height: calc(100vh - 30px);
+
+        min-width: 0;
+    }
+
+    #dashboardView .window-content {
+        padding: 15px;
+    }
+}
+/* ==========================================================
+   EDITKAMAR.EXE — FILE MENU
+   ========================================================== */
+
+#dashboardView .window-menubar {
+    overflow: visible;
+}
+
+.editkamar-menu {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.editkamar-menu > button {
+    width: auto;
+    height: 28px;
+    min-height: 0;
+    margin: 0;
+    padding: 3px 9px;
+
+    background: transparent;
+    color: #24363d;
+
+    border: 1px solid transparent;
+
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+.editkamar-menu > button:hover {
+    background: #315d70;
+    color: white;
+    border-color: #173b4b;
+}
+
+.editkamar-dropdown {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    min-width: 220px;
+
+    z-index: 100000;
+
+    padding: 2px;
+
+    background: #d4d0c8;
+
+    border: 2px solid;
+    border-color: #fff #404040 #404040 #fff;
+
+    box-shadow: 4px 4px 0 rgba(0,0,0,.35);
+}
+
+.editkamar-menu:hover .editkamar-dropdown {
+    display: block;
+}
+
+.editkamar-dropdown button {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    min-height: 0;
+
+    margin: 0;
+    padding: 7px 12px;
+
+    background: transparent;
+    color: #111;
+
+    border: 0;
+
+    text-align: left;
+
+    font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.editkamar-dropdown button:hover {
+    background: #000080;
+    color: white;
+}
+
+
+/* ==========================================================
+   CDEDIT32.EXE — CODEMIRROR EDITOR
+   ========================================================== */
+.cdedit32-overlay{position:fixed;inset:0;z-index:2147483645;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.58)}
+.cdedit32-overlay.hidden{display:none}
+.cdedit32-window{width:min(920px,calc(100vw - 24px));height:min(650px,calc(100vh - 24px));display:flex;flex-direction:column;background:#263238;color:#d4d4d4;border:1px solid #555;box-shadow:8px 8px 0 rgba(0,0,0,.45);font-family:Consolas,"Courier New",monospace}
+.cdedit32-titlebar{height:30px;display:flex;align-items:center;justify-content:space-between;padding:0 7px;background:linear-gradient(#315d70,#173b4b);color:#fff;font-size:12px;font-weight:bold}
+.cdedit32-titlebar b{color:#e7a452;margin-right:5px}.cdedit32-titlebar button{width:20px;height:20px;margin:0;padding:0;background:#d4d0c8;color:#111;border:1px solid;border-color:#fff #404040 #404040 #fff;font:bold 14px Arial;cursor:pointer}
+.cdedit32-menubar{height:28px;display:flex;align-items:center;gap:22px;padding:0 10px;background:#263238;border-bottom:1px solid #455a64;color:#cfd8dc;font-size:11px}.cdedit32-menubar span:last-child{margin-left:auto;color:#80cbc4}
+.cdedit32-editor-shell{display:flex;flex:1;min-height:0;overflow:hidden;background:#263238}.cdedit32-editor-shell .CodeMirror{height:100%;width:100%;font:13px/1.5 Consolas,"Courier New",monospace;letter-spacing:0}.cdedit32-editor-shell .CodeMirror-gutters{background:#263238;border-right:1px solid #455a64}.cdedit32-editor-shell .CodeMirror-linenumber{color:#78909c}.cdedit32-editor-shell .CodeMirror-cursor{border-left-color:#fff}.cdedit32-editor-shell .CodeMirror-selected{background:rgba(38,79,120,.75)}
+
+/* Visual Basic / Visual Studio-inspired CodeMirror palette. */
+.cdedit32-vb-mode .cm-keyword{color:#569cd6;font-weight:600}
+.cdedit32-vb-mode .cm-type{color:#4ec9b0}
+.cdedit32-vb-mode .cm-def{color:#dcdcaa}
+.cdedit32-vb-mode .cm-variable{color:#9cdcfe}
+.cdedit32-vb-mode .cm-variable-2,
+.cdedit32-vb-mode .cm-qualifier{color:#9b9b9b}
+.cdedit32-vb-mode .cm-builtin{color:#4ec9b0}
+.cdedit32-vb-mode .cm-string{color:#ce9178}
+.cdedit32-vb-mode .cm-number{color:#b5cea8}
+.cdedit32-vb-mode .cm-comment{color:#6a9955}
+.cdedit32-vb-mode .cm-meta{color:#c586c0}
+.cdedit32-vb-mode .cm-operator{color:#d4d4d4}
+.cdedit32-footer{height:30px;display:flex;align-items:center;gap:18px;padding:0 10px;background:#007acc;color:#fff;font-size:10px}.cdedit32-footer span:nth-child(2){margin-left:auto}.cdedit32-footer button{width:auto;height:22px;margin:0;padding:2px 12px;background:#d4d0c8;color:#111;border:2px solid;border-color:#fff #404040 #404040 #fff;font:11px "MS Sans Serif",Tahoma,Arial,sans-serif;cursor:pointer}
+
+/* ==========================================================
+   FILESYSTEM AUTH OVERLAY
+   ========================================================== */
+
+.filesystem-auth-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0,0,0,.55);
+}
+
+.filesystem-auth-overlay.hidden {
+    display: none;
+}
+
+.filesystem-auth-window {
+    width: 430px;
+    max-width: calc(100vw - 30px);
+
+    background: #d4d0c8;
+    color: #111;
+
+    border: 2px solid;
+    border-color: #fff #404040 #404040 #fff;
+
+    box-shadow: 6px 6px 0 rgba(0,0,0,.45);
+
+    font-family:
+        "MS Sans Serif",
+        Tahoma,
+        Arial,
+        sans-serif;
+}
+
+.filesystem-auth-titlebar {
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4px 0 7px;
+
+    background: #000080;
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.filesystem-small-close {
+    width: 18px !important;
+    height: 18px !important;
+
+    min-width: 18px !important;
+    min-height: 18px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #d4d0c8 !important;
+    color: #111 !important;
+
+    border: 1px solid !important;
+    border-color: #fff #404040 #404040 #fff !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 13px !important;
+}
+
+.filesystem-auth-body {
+    padding: 22px;
+}
+
+.filesystem-auth-icon {
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 12px;
+
+    background: #000080;
+    color: white;
+
+    border: 2px solid;
+    border-color: #404040 #fff #fff #404040;
+
+    font-size: 23px;
+}
+
+.filesystem-auth-body h3 {
+    margin: 0 0 7px;
+    font-size: 17px;
+}
+
+.filesystem-auth-body p {
+    margin: 0 0 16px;
+
+    color: #444;
+
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.filesystem-auth-body label {
+    display: block;
+
+    margin: 0 0 5px;
+
+    color: #222;
+
+    font-family:
+        "MS Sans Serif",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.filesystem-auth-body input {
+    width: 100%;
+    height: 30px;
+
+    margin: 0;
+
+    padding: 4px 7px;
+
+    background: white;
+    color: #111;
+
+    border: 2px solid;
+    border-color: #404040 #fff #fff #404040;
+
+    font-family: Consolas, monospace;
+    font-size: 12px;
+}
+
+.filesystem-auth-message {
+    min-height: 17px;
+
+    margin-top: 8px;
+
+    color: #a00000;
+
+    font-family: Consolas, monospace;
+    font-size: 10px;
+}
+
+.filesystem-auth-footer {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 7px;
+
+    padding: 8px 12px 12px;
+
+    border-top: 1px solid #808080;
+}
+
+.filesystem-auth-footer button {
+    width: auto;
+    min-width: 75px;
+    height: 23px;
+
+    margin: 0;
+    padding: 3px 12px;
+
+    background: #d4d0c8;
+    color: #111;
+
+    border: 2px solid;
+    border-color: #fff #404040 #404040 #fff;
+
+    font-family:
+        "MS Sans Serif",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+}
+
+
+/* ==========================================================
+   PROMPT.EXE — FILESYSTEM CLOSE CONFIRMATION
+   ========================================================== */
+
+.prompt-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483646;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .45);
+}
+
+.prompt-overlay.hidden {
+    display: none;
+}
+
+.prompt-window {
+    width: 390px;
+    max-width: calc(100vw - 24px);
+    background: #d4d0c8;
+    color: #111;
+    border: 2px solid;
+    border-color: #fff #404040 #404040 #fff;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .45);
+    font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+}
+
+.prompt-titlebar {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    padding: 0 7px;
+    background: #000080;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.prompt-body {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 24px 20px 20px;
+}
+
+.prompt-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 38px;
+    background: #000080;
+    color: #fff;
+    border: 2px solid;
+    border-color: #404040 #fff #fff #404040;
+    font: bold 25px Arial, sans-serif;
+}
+
+.prompt-message {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.prompt-message strong {
+    font-size: 14px;
+}
+
+.prompt-message span {
+    color: #444;
+}
+
+.prompt-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 7px;
+    padding: 8px 12px 12px;
+    border-top: 1px solid #808080;
+}
+
+.prompt-footer button {
+    width: auto;
+    min-width: 82px;
+    height: 24px;
+    margin: 0;
+    padding: 3px 10px;
+    background: #d4d0c8;
+    color: #111;
+    border: 2px solid;
+    border-color: #fff #404040 #404040 #fff;
+    font: 11px "MS Sans Serif", Tahoma, Arial, sans-serif;
+}
+
+.prompt-footer button:active {
+    border-color: #404040 #fff #fff #404040;
+}
+
+/* ==========================================================
+   UPLOAD32.EXE — LARGE FILE UPLOAD
+   ========================================================== */
+
+.upload32-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.5);
+}
+
+.upload32-overlay.hidden { display: none; }
+
+.upload32-window {
+  width: 460px;
+  max-width: calc(100vw - 24px);
+  background: #d4d0c8;
+  color: #111;
+  border: 2px solid;
+  border-color: #fff #404040 #404040 #fff;
+  box-shadow: 5px 5px 0 rgba(0,0,0,.45);
+  font: 12px "MS Sans Serif", Tahoma, Arial, sans-serif;
+}
+
+.upload32-titlebar {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px 0 8px;
+  background: #000080;
+  color: #fff;
+  font-weight: bold;
+}
+
+.upload32-titlebar button {
+  width: 18px;
+  height: 17px;
+  margin: 0;
+  padding: 0;
+  background: #d4d0c8;
+  color: #111;
+  border: 1px solid;
+  border-color: #fff #404040 #404040 #fff;
+  font: bold 13px Arial, sans-serif;
+}
+
+.upload32-body { padding: 18px; }
+.upload32-heading { display: flex; gap: 12px; align-items: center; }
+.upload32-heading > div { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.upload32-heading strong { font-size: 15px; }
+.upload32-heading span:last-child { color: #555; font: 10px Consolas, monospace; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.upload32-icon { width: 40px; height: 40px; display: grid; place-items: center; background: #000080; color: #fff; font: bold 26px Arial, sans-serif; }
+.upload32-status { margin-top: 18px; padding: 8px; background: #fff; border: 1px solid #808080; font: 11px Consolas, monospace; }
+.upload32-progress-track { height: 20px; margin-top: 12px; background: #fff; border: 2px solid; border-color: #404040 #fff #fff #404040; overflow: hidden; }
+.upload32-progress-bar { width: 0%; height: 100%; background: repeating-linear-gradient(90deg, #000080 0 12px, #d4d0c8 12px 14px); transition: width .08s linear; }
+.upload32-progress-row { display: flex; justify-content: space-between; margin-top: 6px; font: 10px Consolas, monospace; }
+.upload32-footer { display: flex; justify-content: flex-end; padding: 8px 12px 12px; border-top: 1px solid #808080; }
+.upload32-footer button { width: auto; min-width: 75px; height: 24px; margin: 0; padding: 3px 10px; background: #d4d0c8; color: #111; border: 2px solid; border-color: #fff #404040 #404040 #fff; font: 11px "MS Sans Serif", Tahoma, Arial, sans-serif; }
+
+/* ==========================================================
+   SECVIRUS32.EXE + FILE CONTEXT MENU
+   ========================================================== */
+
+.filesystem-context-menu {
+  position: fixed;
+  z-index: 2147483647;
+  min-width: 180px;
+  padding: 2px;
+  background: #d4d0c8;
+  border: 2px solid;
+  border-color: #fff #404040 #404040 #fff;
+  box-shadow: 4px 4px 0 rgba(0,0,0,.35);
+  font: 11px "MS Sans Serif", Tahoma, Arial, sans-serif;
+}
+
+.filesystem-context-menu.hidden { display: none; }
+
+.filesystem-context-menu button {
+  display: block;
+  width: 100%;
+  height: 26px;
+  margin: 0;
+  padding: 4px 12px;
+  background: transparent;
+  color: #111;
+  border: 0;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.filesystem-context-menu button:hover {
+  background: #000080;
+  color: #fff;
+}
+
+.secvirus32-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.5);
+}
+
+.secvirus32-overlay.hidden { display: none; }
+
+.secvirus32-window {
+  width: 430px;
+  max-width: calc(100vw - 24px);
+  background: #d4d0c8;
+  color: #111;
+  border: 2px solid;
+  border-color: #fff #404040 #404040 #fff;
+  box-shadow: 5px 5px 0 rgba(0,0,0,.45);
+  font: 12px "MS Sans Serif", Tahoma, Arial, sans-serif;
+}
+
+.secvirus32-titlebar {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px 0 8px;
+  background: #000080;
+  color: #fff;
+  font-weight: bold;
+}
+
+.secvirus32-titlebar button {
+  width: 18px;
+  height: 17px;
+  margin: 0;
+  padding: 0;
+  background: #d4d0c8;
+  color: #111;
+  border: 1px solid;
+  border-color: #fff #404040 #404040 #fff;
+  font: bold 13px Arial, sans-serif;
+}
+
+.secvirus32-body { padding: 18px; }
+.secvirus32-heading { display: flex; gap: 12px; align-items: center; }
+.secvirus32-heading > div { display: flex; flex-direction: column; gap: 5px; }
+.secvirus32-heading strong { font-size: 15px; }
+.secvirus32-heading span:last-child { color: #555; font: 10px Consolas, monospace; overflow-wrap: anywhere; }
+.secvirus32-icon { width: 40px; height: 40px; display: grid; place-items: center; background: #000080; color: #fff; font-size: 24px; }
+.secvirus32-status { margin-top: 18px; padding: 8px; background: #fff; border: 1px solid #808080; font: 11px Consolas, monospace; }
+.secvirus32-results { min-height: 32px; margin-top: 8px; }
+.secvirus32-threat, .secvirus32-safe { padding: 6px 8px; margin-top: 4px; font-weight: bold; }
+.secvirus32-threat { background: #ffd6d6; color: #900; }
+.secvirus32-safe { background: #d8f0d8; color: #064d06; }
+.secvirus32-footer { display: flex; justify-content: flex-end; gap: 7px; padding: 8px 12px 12px; border-top: 1px solid #808080; }
+.secvirus32-footer button { width: auto; min-width: 75px; height: 24px; margin: 0; padding: 3px 10px; background: #d4d0c8; color: #111; border: 2px solid; border-color: #fff #404040 #404040 #fff; font: 11px "MS Sans Serif", Tahoma, Arial, sans-serif; }
+
+/* ==========================================================
+   KAMAR FILESYSTEM WINDOW
+   ========================================================== */
+
+.filesystem-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0,0,0,.50);
+}
+
+.filesystem-overlay.hidden {
+    display: none;
+}
+
+.filesystem-window {
+    position: relative;
+
+    width: min(1000px, calc(100vw - 30px));
+    height: min(700px, calc(100vh - 30px));
+
+    max-width: calc(100vw - 30px);
+    max-height: calc(100vh - 30px);
+
+    min-width: 600px;
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #d4d0c8;
+    color: #111;
+
+    border: 2px solid;
+    border-color: #fff #404040 #404040 #fff;
+
+    box-shadow: 6px 6px 0 rgba(0,0,0,.45);
+
+    font-family:
+        "MS Sans Serif",
+        Tahoma,
+        Arial,
+        sans-serif;
+}
+
+
+/* ==========================================================
+   FILESYSTEM TITLEBAR
+   ========================================================== */
+
+.filesystem-titlebar {
+    flex: 0 0 24px;
+
+    height: 24px;
+    min-height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4px 0 7px;
+
+    background: #000080;
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: move;
+}
+
+.filesystem-icon {
+    margin-right: 5px;
+    color: #fff;
+}
+
+.filesystem-window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.filesystem-window-controls button {
+    width: 18px;
+    height: 17px;
+
+    min-width: 18px;
+    min-height: 17px;
+
+    margin: 0;
+    padding: 0;
+
+    background: #d4d0c8;
+    color: #111;
+
+    border: 1px solid;
+    border-color: #fff #404040 #404040 #fff;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   FILESYSTEM MENUBAR
+   ========================================================== */
+
+.filesystem-menubar {
+    flex: 0 0 25px;
+
+    height: 25px;
+    min-height: 25px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 2px;
+
+    position: relative;
+
+    background: #d4d0c8;
+
+    border-bottom: 1px solid #808080;
+}
+
+.filesystem-menu {
+    position: relative;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.filesystem-menu > button {
+    width: auto;
+    height: 23px;
+
+    min-height: 23px;
+
+    margin: 0;
+    padding: 3px 9px;
+
+    background: transparent;
+    color: #111;
+
+    border: 0;
+
+    font-family:
+        "MS Sans Serif",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.filesystem-menu > button:hover {
+    background: #000080;
+    color: white;
+}
+
+.filesystem-dropdown {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    min-width: 190px;
+
+    z-index: 1000001;
+
+    padding: 2px;
+
+    background: #d4d0c8;
+
+    border: 2px solid;
+    border-color: #fff #404040 #404040 #fff;
+
+    box-shadow: 4px 4px 0 rgba(0,0,0,.3);
+}
+
+.filesystem-menu:hover .filesystem-dropdown {
+    display: block;
+}
+
+.filesystem-dropdown button {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    min-height: 0;
+
+    margin: 0;
+    padding: 6px 12px;
+
+    background: transparent;
+    color: #111;
+
+    border: 0;
+
+    text-align: left;
+
+    font-family:
+        "MS Sans Serif",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+.filesystem-dropdown button:hover {
+    background: #000080;
+    color: white;
+}
+
+.filesystem-menu-status {
+    margin-left: auto;
+
+    padding-right: 10px;
+
+    color: #3c7773;
+
+    font-family: Consolas, monospace;
+    font-size: 9px;
+}
+
+
+/* ==========================================================
+   FILESYSTEM TOOLBAR
+   ========================================================== */
+
+.filesystem-toolbar {
+    flex: 0 0 38px;
+
+    height: 38px;
+    min-height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    padding: 0 7px;
+
+    background: #dedede;
+
+    border-bottom: 1px solid #808080;
+
+    overflow-x: auto;
+}
+
+.filesystem-toolbar > button {
+    width: auto;
+    height: 25px;
+
+    min-width: 0;
+    min-height: 25px;
+
+    margin: 0;
+    padding: 3px 9px;
+
+    background: #d4d0c8;
+    color: #111;
+
+    border: 1px solid;
+    border-color: #fff #404040 #404040 #fff;
+
+    font-family:
+        "MS Sans Serif",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+.filesystem-toolbar > button:active {
+    border-color: #404040 #fff #fff #404040;
+}
+
+.filesystem-toolbar-separator {
+    height: 22px;
+
+    margin: 0 4px;
+
+    border-left: 1px solid #999;
+}
+
+.filesystem-path {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #333;
+
+    font-family: Consolas, monospace;
+    font-size: 10px;
+}
+
+
+/* ==========================================================
+   FILESYSTEM MAIN
+   ========================================================== */
+
+.filesystem-main {
+    flex: 1 1 auto;
+
+    min-width: 0;
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns: 290px minmax(0, 1fr);
+
+    background: #808080;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   TREE
+   ========================================================== */
+
+.filesystem-tree-panel,
+.filesystem-editor-panel {
+    min-width: 0;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #d4d0c8;
+}
+
+.filesystem-tree-panel {
+    border-right: 2px solid;
+    border-right-color: #404040;
+}
+
+.filesystem-panel-title {
+    flex: 0 0 25px;
+
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 8px;
+
+    background: #c0c0c0;
+
+    border-bottom: 1px solid #808080;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.filesystem-tree {
+    flex: 1;
+
+    min-height: 0;
+
+    padding: 5px;
+
+    overflow-y: auto;
+    overflow-x: auto;
+
+    background: white;
+
+    border: 2px solid;
+    border-color: #404040 #fff #fff #404040;
+
+    font-family: Consolas, monospace;
+    font-size: 11px;
+}
+
+.filesystem-tree::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.filesystem-tree::-webkit-scrollbar-track {
+    background: #d4d0c8;
+}
+
+.filesystem-tree::-webkit-scrollbar-thumb {
+    background: #808080;
+
+    border: 2px solid #d4d0c8;
+}
+
+
+/* Tree rows */
+
+.filesystem-tree-row {
+    display: flex;
+    align-items: center;
+
+    min-width: max-content;
+
+    height: 23px;
+
+    padding: 2px 6px;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+.filesystem-tree-row:hover {
+    background: #e8e8ff;
+}
+
+.filesystem-tree-row.selected {
+    background: #dbe8ff;
+    color: #0000cc;
+}
+
+.filesystem-tree-row.selected .filesystem-tree-name {
+    color: #0000cc;
+    font-weight: bold;
+}
+
+.filesystem-tree-indent {
+    display: inline-block;
+
+    width: 18px;
+}
+
+.filesystem-tree-arrow {
+    width: 16px;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+}
+
+.filesystem-tree-icon {
+    width: 20px;
+    height: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    flex: 0 0 20px;
+}
+
+.filesystem-file-icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.filesystem-tree-name {
+    white-space: nowrap;
+}
+
+
+/* ==========================================================
+   EDITOR
+   ========================================================== */
+
+.filesystem-editor-panel {
+    background: #d4d0c8;
+}
+
+.filesystem-editor-header {
+    flex: 0 0 32px;
+
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 0 9px;
+
+    background: #c0c0c0;
+
+    border-bottom: 1px solid #808080;
+
+    font-family: Consolas, monospace;
+    font-size: 10px;
+}
+
+#fileSystemSelectedName {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-weight: bold;
+}
+
+#fileSystemSelectedType {
+    color: #555;
+
+    white-space: nowrap;
+}
+
+.filesystem-editor {
+    flex: 1;
+
+    width: 100%;
+    min-height: 0;
+
+    resize: none;
+
+    margin: 0;
+    padding: 10px;
+
+    background: white;
+    color: #111;
+
+    border: 2px solid;
+    border-color: #404040 #fff #fff #404040;
+
+    outline: none;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.45;
+
+    white-space: pre-wrap;
+}
+
+.filesystem-editor:focus {
+    outline: 1px dotted #000080;
+}
+
+.filesystem-editor-footer {
+    flex: 0 0 32px;
+
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7px;
+
+    background: #d4d0c8;
+
+    border-top: 1px solid #808080;
+}
+
+.filesystem-editor-footer span {
+    color: #555;
+
+    font-family: Consolas, monospace;
+    font-size: 9px;
+}
+
+.filesystem-editor-footer button {
+    width: auto;
+    height: 23px;
+
+    min-height: 23px;
+
+    margin: 0;
+    padding: 3px 12px;
+
+    background: #d4d0c8;
+    color: #111;
+
+    border: 2px solid;
+    border-color: #fff #404040 #404040 #fff;
+
+    font-family:
+        "MS Sans Serif",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+}
+
+
+/* ==========================================================
+   FILESYSTEM STATUSBAR
+   ========================================================== */
+
+.filesystem-statusbar {
+    flex: 0 0 21px;
+
+    height: 21px;
+    min-height: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7px;
+
+    background: #d4d0c8;
+
+    border-top: 1px solid #fff;
+
+    color: #444;
+
+    font-family: Consolas, monospace;
+    font-size: 9px;
+}
+
+
+/* ==========================================================
+   MAXIMIZED
+   ========================================================== */
+
+.filesystem-window.filesystem-maximized {
+    position: fixed;
+
+    inset: 8px;
+
+    width: auto;
+    height: auto;
+
+    max-width: none;
+    max-height: none;
+
+    min-width: 0;
+    min-height: 0;
+}
+
+
+/* ==========================================================
+   MINIMIZED
+   ========================================================== */
+
+.filesystem-window.filesystem-minimized {
+    width: 320px;
+    height: 24px;
+
+    min-width: 320px;
+    min-height: 24px;
+}
+
+.filesystem-window.filesystem-minimized .filesystem-menubar,
+.filesystem-window.filesystem-minimized .filesystem-toolbar,
+.filesystem-window.filesystem-minimized .filesystem-main,
+.filesystem-window.filesystem-minimized .filesystem-statusbar {
+    display: none;
+}
+
+
+/* ==========================================================
+   SMALL SCREEN
+   ========================================================== */
+
+@media (max-width: 760px) {
+
+    .filesystem-window {
+        width: calc(100vw - 12px);
+        height: calc(100vh - 12px);
+
+        max-width: calc(100vw - 12px);
+        max-height: calc(100vh - 12px);
+
+        min-width: 0;
+        min-height: 300px;
+    }
+
+    .filesystem-main {
+        grid-template-columns: 220px minmax(0, 1fr);
+    }
+}
+/* ==========================================================
+   EDITKAMAR.EXE MENUBAR — FIX
+   ========================================================== */
+
+/* Allow dropdowns to extend outside the menubar */
+#dashboardView .window-shell {
+    overflow: visible;
+}
+
+#dashboardView .window-menubar {
+    position: relative;
+    z-index: 1000;
+    overflow: visible;
+
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    height: 34px;
+    min-height: 34px;
+
+    padding: 0 14px;
+}
+
+
+/* Individual menu */
+#dashboardView .editkamar-menu {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 34px;
+    min-height: 34px;
+}
+
+
+/* FILE / EDIT / VIEW / HELP buttons */
+#dashboardView .editkamar-menu > button {
+    display: flex;
+    align-items: center;
+
+    width: auto !important;
+    min-width: 0 !important;
+
+    height: 30px !important;
+    min-height: 30px !important;
+
+    margin: 0 !important;
+    padding: 0 9px !important;
+
+    background: transparent !important;
+    color: #24363d !important;
+
+    border: 1px solid transparent !important;
+
+    font-family: "Space Mono", monospace !important;
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    letter-spacing: .02em !important;
+
+    cursor: pointer;
+}
+
+
+/* Hover */
+#dashboardView .editkamar-menu > button:hover {
+    background: #315d70 !important;
+    color: #fff !important;
+
+    border-color: #173b4b !important;
+}
+
+
+/* ==========================================================
+   DROPDOWN
+   ========================================================== */
+
+#dashboardView .editkamar-dropdown {
+    display: none;
+
+    position: absolute;
+
+    top: 33px;
+    left: 0;
+
+    width: 235px;
+    min-width: 235px;
+
+    padding: 2px;
+
+    z-index: 999999;
+
+    background: #d4d0c8;
+
+    color: #111;
+
+    border: 2px solid;
+    border-color: #fff #404040 #404040 #fff;
+
+    box-shadow: 4px 4px 0 rgba(0,0,0,.35);
+}
+
+
+/* Show dropdown */
+#dashboardView .editkamar-menu:hover .editkamar-dropdown,
+#dashboardView .editkamar-menu:focus-within .editkamar-dropdown {
+    display: block;
+}
+
+
+/* Dropdown items */
+#dashboardView .editkamar-dropdown button {
+    display: block;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    height: 28px !important;
+    min-height: 28px !important;
+
+    margin: 0 !important;
+    padding: 4px 12px !important;
+
+    background: transparent !important;
+    color: #111 !important;
+
+    border: 0 !important;
+
+    text-align: left;
+
+    font-family:
+        "MS Sans Serif",
+        Tahoma,
+        Arial,
+        sans-serif !important;
+
+    font-size: 11px !important;
+    font-weight: 400 !important;
+
+    letter-spacing: 0 !important;
+
+    cursor: pointer;
+}
+
+
+/* Dropdown hover */
+#dashboardView .editkamar-dropdown button:hover {
+    background: #000080 !important;
+    color: #fff !important;
+}
+
+
+/* Make sure the welcome name stays on the right */
+#dashboardView .window-menubar > em {
+    margin-left: auto;
+}
+
+
+/* ==========================================================
+   FILE MENU SPECIFIC
+   ========================================================== */
+
+#dashboardView .editkamar-menu:first-child
+.editkamar-dropdown {
+    left: 0;
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 760px) {
+
+    #dashboardView .window-menubar {
+        padding: 0 6px;
+        gap: 0;
+    }
+
+    #dashboardView .editkamar-menu > button {
+        padding: 0 7px !important;
+        font-size: 10px !important;
+    }
+
+    #dashboardView .editkamar-dropdown {
+        width: 220px;
+        min-width: 220px;
+    }
+}
+/* ==========================================================
+   CDEDIT32.EXE — CUSTOM .NET TOKENS PALETTE
+   ========================================================== */
+
+/* Keywords: Royal Blue */
+.cdedit32-vb-mode .cm-keyword {
+    color: #569cd6 !important;
+    font-weight: 600;
+}
+
+/* Classes: Bright Mint Green */
+.cdedit32-vb-mode .cm-dotnet-class {
+    color: #4ec9b0 !important;
+    font-weight: normal;
+}
+
+/* Structs: Deep Coral Red */
+.cdedit32-vb-mode .cm-dotnet-struct {
+    color: #ed806e !important;
+    font-weight: normal;
+}
+
+/* Interfaces: Soft Gold/Yellow */
+.cdedit32-vb-mode .cm-dotnet-interface {
+    color: #e5d83b !important;
+    font-weight: normal;
+}
+
+/* Enums: Amber/Orange-Yellow */
+.cdedit32-vb-mode .cm-dotnet-enum {
+    color: #e7a452 !important;
+    font-weight: normal;
+}
